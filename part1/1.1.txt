@@ -1,0 +1,16 @@
+# commands
+docker pull nginx:alpine
+docker run -d --name nginx1 nginx:alpine
+docker run -d --name nginx2 nginx:alpine
+docker run -d --name nginx3 nginx:alpine
+docker stop nginx2
+docker stop nginx3
+
+
+
+# results
+$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS                              PORTS     NAMES
+0fd10fbe0ffb   nginx:alpine   "/docker-entrypoint.…"   1 second ago   Exited (0) Less than a second ago             nginx3
+ad9d4291f9d7   nginx:alpine   "/docker-entrypoint.…"   1 second ago   Exited (0) Less than a second ago             nginx2
+dda4a6dcc4a6   nginx:alpine   "/docker-entrypoint.…"   1 second ago   Up 1 second                         80/tcp    nginx1
