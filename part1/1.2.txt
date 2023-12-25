@@ -1,0 +1,15 @@
+# commands
+docker ps -as
+docker images
+docker stop nginx1
+docker rm nginx1 nginx2 nginx3
+docker rmi nginx:alpine
+
+
+
+# results
+$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
