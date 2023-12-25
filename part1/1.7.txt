@@ -1,0 +1,24 @@
+# Dockerfile
+FROM ubuntu:20.04
+RUN apt update && apt upgrade && apt install -y curl
+WORKDIR /usr/src/app
+COPY script.sh .
+RUN chmod +x script.sh
+CMD ./script.sh
+
+# build image
+docker build . -t dependency2
+
+# run container
+$ docker run -it dependency2
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
+Input website:
