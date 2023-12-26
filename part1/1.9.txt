@@ -1,0 +1,19 @@
+$ touch text.log
+$ docker run -v "$(pwd)/text.log:/usr/src/app/text.log" --name server devopsdockeruh/simple-web-service
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+
+
+
+# text.log on host machine
+2023-12-26 16:54:23 +0000 UTC
+2023-12-26 16:54:25 +0000 UTC
+2023-12-26 16:54:27 +0000 UTC
+2023-12-26 16:54:29 +0000 UTC
+2023-12-26 16:54:31 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
