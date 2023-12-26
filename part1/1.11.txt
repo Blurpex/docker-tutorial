@@ -1,0 +1,35 @@
+# Dockerfile
+FROM eclipse-temurin:8-alpine
+WORKDIR /app
+EXPOSE 8080
+COPY . .
+RUN ./mvnw package
+CMD java -jar ./target/docker-example-1.1.3.jar
+
+
+
+# run container
+$ docker run -p 127.0.0.1:8080:8080 --name test simple-button
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2023-12-26 17:53:15.949  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : Starting DemoApplication v1.1.3 on c7b36e174b6a with PID 1 (/app/target/docker-example-1.1.3.jar started by root in /app)
+2023-12-26 17:53:15.951  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : No active profile set, falling back to default profiles: default
+2023-12-26 17:53:16.851  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-26 17:53:16.875  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 17:53:16.875  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2023-12-26 17:53:16.885  INFO 1 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/opt/java/openjdk/jre/lib/amd64/server:/opt/java/openjdk/jre/lib/amd64:/opt/java/openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2023-12-26 17:53:16.940  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 17:53:16.940  INFO 1 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 944 ms
+2023-12-26 17:53:17.110  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-26 17:53:17.240  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-26 17:53:17.400  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-26 17:53:17.402  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : Started DemoApplication in 1.768 seconds (JVM running for 2.094)
+2023-12-26 17:53:25.860  INFO 1 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 17:53:25.860  INFO 1 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 17:53:25.864  INFO 1 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
